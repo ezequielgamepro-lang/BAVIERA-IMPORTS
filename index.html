@@ -1,162 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Baviera Imports | Catálogo</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    body {
-      background: #f2f2f2;
-      padding-bottom: 100px;
-    }
-
-    header {
-      background: #000;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 22px;
-    }
-
-    header p {
-      font-size: 14px;
-      margin-top: 5px;
-    }
-
-    .info {
-      background: #fff;
-      margin: 10px;
-      padding: 15px;
-      border-radius: 8px;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .catalogo {
-      padding: 10px;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 15px;
-      margin-bottom: 12px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .card h2 {
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .card p {
-      font-size: 14px;
-      margin: 3px 0;
-    }
-
-    .preco {
-      font-size: 18px;
-      font-weight: bold;
-      color: #0a7cff;
-      margin-top: 8px;
-    }
-
-    .parcelamento {
-      font-size: 13px;
-      color: #2e7d32;
-      margin-top: 4px;
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      color: #fff;
-      padding: 15px 18px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>Baviera Imports</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <header>
-    <h1>Baviera Imports</h1>
-    <p>Balneário Camboriú e região • Entrega grátis</p>
-  </header>
+<header class="hero">
+  <h1>Baviera Imports</h1>
+  <p>iPhones Seminovos • Garantia de 90 dias<br>
+     Entrega grátis em BC e região • Até 12x no cartão</p>
+</header>
 
-  <div class="info">
-    📱 iPhones seminovos selecionados<br>
-    🛡️ 90 dias de garantia<br>
-    💳 Parcelamos em até <strong>12x no cartão</strong><br>
-    📄 CNPJ: 60.393.207/0001-03
+<section class="infos">
+  <div class="info-card">
+    📍<strong>Localização</strong>
+    <span>Balneário Camboriú - SC</span>
   </div>
-
-  <div class="catalogo">
-
-    <div class="card">
-      <h2>iPhone 12 • 64GB</h2>
-      <p>🔋 Bateria: 75%</p>
-      <p>🎨 Cor: Preta</p>
-      <p class="preco">R$ 1.550,00</p>
-      <p class="parcelamento">Até 12x no cartão</p>
-    </div>
-
-    <div class="card">
-      <h2>iPhone 13 • 128GB</h2>
-      <p>🔋 Bateria: 85%</p>
-      <p>🎨 Cor: Preta</p>
-      <p class="preco">R$ 2.299,00</p>
-      <p class="parcelamento">Até 12x no cartão</p>
-    </div>
-
-    <div class="card">
-      <h2>iPhone 14 • 128GB</h2>
-      <p>🔋 Bateria: 100%</p>
-      <p>🎨 Cor: Preta</p>
-      <p class="preco">R$ 2.499,00</p>
-      <p class="parcelamento">Até 12x no cartão</p>
-    </div>
-
-    <div class="card">
-      <h2>iPhone 14 • 128GB</h2>
-      <p>🔋 Bateria: 100%</p>
-      <p>🎨 Cor: Preta</p>
-      <p class="preco">R$ 2.599,00</p>
-      <p class="parcelamento">Até 12x no cartão</p>
-    </div>
-
-    <div class="card">
-      <h2>iPhone 15 Pro • 128GB</h2>
-      <p>🔋 Bateria: 81%</p>
-      <p>🎨 Cor: Black Titanium</p>
-      <p class="preco">R$ 3.699,00</p>
-      <p class="parcelamento">Até 12x no cartão</p>
-    </div>
-
+  <div class="info-card">
+    🛡️<strong>Garantia</strong>
+    <span>90 dias</span>
   </div>
+  <div class="info-card">
+    💳<strong>Pagamento</strong>
+    <span>Até 12x no cartão</span>
+  </div>
+</section>
 
-  <a class="whatsapp-float" 
-     href="https://wa.me/5547996544445" 
-     target="_blank">
-     💬 WhatsApp
-  </a>
+<section class="catalogo">
+  <h2>📱 Catálogo Disponível</h2>
+  <div id="produtos"></div>
+</section>
 
+<a class="whatsapp-float" href="https://wa.me/55479965444445" target="_blank">
+  Falar no WhatsApp
+</a>
+
+<script src="script.js"></script>
 </body>
 </html>
