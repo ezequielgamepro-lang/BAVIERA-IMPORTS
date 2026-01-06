@@ -1,233 +1,162 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Baviera Imports • Catálogo</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Baviera Imports | Catálogo</title>
 
-<style>
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial;
-  background: #f5f5f7;
-  color: #1d1d1f;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-header {
-  background: #000;
-  color: #fff;
-  padding: 22px;
-  text-align: center;
-}
+    body {
+      background: #f2f2f2;
+      padding-bottom: 100px;
+    }
 
-header h1 {
-  margin: 0;
-  font-size: 22px;
-}
+    header {
+      background: #000;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
 
-header p {
-  margin-top: 6px;
-  font-size: 14px;
-  opacity: 0.85;
-}
+    header h1 {
+      font-size: 22px;
+    }
 
-.badge {
-  display: inline-block;
-  background: #1d1d1f;
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 12px;
-  margin-top: 10px;
-}
+    header p {
+      font-size: 14px;
+      margin-top: 5px;
+    }
 
-.info {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 12px;
-  padding: 15px;
-}
+    .info {
+      background: #fff;
+      margin: 10px;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
 
-.card {
-  background: #fff;
-  padding: 14px;
-  border-radius: 14px;
-  box-shadow: 0 4px 10px rgba(0,0,0,.06);
-  font-size: 14px;
-}
+    .catalogo {
+      padding: 10px;
+    }
 
-.catalogo {
-  padding: 15px;
-}
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 
-.item {
-  background: #fff;
-  border-radius: 16px;
-  padding: 14px;
-  margin-bottom: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.05);
-}
+    .card h2 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
 
-.item label {
-  display: flex;
-  gap: 12px;
-}
+    .card p {
+      font-size: 14px;
+      margin: 3px 0;
+    }
 
-.item strong {
-  display: block;
-}
+    .preco {
+      font-size: 18px;
+      font-weight: bold;
+      color: #0a7cff;
+      margin-top: 8px;
+    }
 
-.item span {
-  font-size: 13px;
-  color: #6e6e73;
-}
+    .parcelamento {
+      font-size: 13px;
+      color: #2e7d32;
+      margin-top: 4px;
+    }
 
-.preco {
-  font-size: 15px;
-  font-weight: 600;
-  margin-top: 4px;
-}
-
-footer {
-  text-align: center;
-  padding: 15px;
-  font-size: 12px;
-  color: #6e6e73;
-}
-
-/* BOTÃO FLUTUANTE */
-.whatsapp-fixo {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: #fff;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  box-shadow: 0 6px 15px rgba(0,0,0,.3);
-  cursor: pointer;
-  z-index: 999;
-}
-</style>
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: #fff;
+      padding: 15px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <h1>📱 Baviera Imports</h1>
-  <p>Entrega grátis em BC e região • Garantia de 90 dias</p>
-  <div class="badge">💳 Parcelamos em até 12x no cartão</div>
-</header>
+  <header>
+    <h1>Baviera Imports</h1>
+    <p>Balneário Camboriú e região • Entrega grátis</p>
+  </header>
 
-<section class="info">
-  <div class="card">
-    <strong>📍 Localização</strong>
-    Balneário Camboriú – SC
+  <div class="info">
+    📱 iPhones seminovos selecionados<br>
+    🛡️ 90 dias de garantia<br>
+    💳 Parcelamos em até <strong>12x no cartão</strong><br>
+    📄 CNPJ: 60.393.207/0001-03
   </div>
-  <div class="card">
-    <strong>🚚 Entrega</strong>
-    Grátis em BC e região
+
+  <div class="catalogo">
+
+    <div class="card">
+      <h2>iPhone 12 • 64GB</h2>
+      <p>🔋 Bateria: 75%</p>
+      <p>🎨 Cor: Preta</p>
+      <p class="preco">R$ 1.550,00</p>
+      <p class="parcelamento">Até 12x no cartão</p>
+    </div>
+
+    <div class="card">
+      <h2>iPhone 13 • 128GB</h2>
+      <p>🔋 Bateria: 85%</p>
+      <p>🎨 Cor: Preta</p>
+      <p class="preco">R$ 2.299,00</p>
+      <p class="parcelamento">Até 12x no cartão</p>
+    </div>
+
+    <div class="card">
+      <h2>iPhone 14 • 128GB</h2>
+      <p>🔋 Bateria: 100%</p>
+      <p>🎨 Cor: Preta</p>
+      <p class="preco">R$ 2.499,00</p>
+      <p class="parcelamento">Até 12x no cartão</p>
+    </div>
+
+    <div class="card">
+      <h2>iPhone 14 • 128GB</h2>
+      <p>🔋 Bateria: 100%</p>
+      <p>🎨 Cor: Preta</p>
+      <p class="preco">R$ 2.599,00</p>
+      <p class="parcelamento">Até 12x no cartão</p>
+    </div>
+
+    <div class="card">
+      <h2>iPhone 15 Pro • 128GB</h2>
+      <p>🔋 Bateria: 81%</p>
+      <p>🎨 Cor: Black Titanium</p>
+      <p class="preco">R$ 3.699,00</p>
+      <p class="parcelamento">Até 12x no cartão</p>
+    </div>
+
   </div>
-  <div class="card">
-    <strong>📄 CNPJ</strong>
-    60.393.207/0001-03
-  </div>
-</section>
 
-<section class="catalogo" id="lista"></section>
-
-<footer>
-  © Baviera Imports • WhatsApp (47) 99654-4445
-</footer>
-
-<!-- BOTÃO FLUTUANTE -->
-<div class="whatsapp-fixo" onclick="enviarWhats()">
-  💬
-</div>
-
-<script src="estoque.js"></script>
-<script>
-const lista = document.getElementById("lista");
-
-estoque
-  .filter(item => item.status === "disponivel")
-  .forEach(item => {
-    lista.innerHTML += `
-      <div class="item">
-        <label>
-          <input type="checkbox" value="${item.modelo} ${item.gb} ${item.cor} - ${item.preco}">
-          <div>
-            <strong>${item.modelo}</strong>
-            <span>${item.gb} • ${item.cor} • Bateria ${item.bateria}</span>
-            <div class="preco">${item.preco}</div>
-          </div>
-        </label>
-      </div>
-    `;
-  });
-
-function enviarWhats() {
-  const selecionados = [...document.querySelectorAll("input:checked")]
-    .map(el => `- ${el.value}`)
-    .join("%0A");
-
-  const msg = selecionados
-    ? `Olá! Vim pelo catálogo da Baviera Imports.%0AParcelamento em até 12x no cartão.%0ATenho interesse em:%0A${selecionados}`
-    : `Olá! Vim pelo catálogo da Baviera Imports e gostaria de informações. Parcelam em até 12x no cartão?`;
-
-  window.open(
-    "https://wa.me/5547996544445?text=" + msg,
-    "_blank"
-  );
-}
-</script>
+  <a class="whatsapp-float" 
+     href="https://wa.me/5547996544445" 
+     target="_blank">
+     💬 WhatsApp
+  </a>
 
 </body>
 </html>
-const estoque = [
-  {
-    modelo: "iPhone 12",
-    gb: "64GB",
-    cor: "Preto",
-    bateria: "75%",
-    preco: "R$ 1.550",
-    status: "disponivel"
-  },
-  {
-    modelo: "iPhone 13",
-    gb: "128GB",
-    cor: "Preto",
-    bateria: "85%",
-    preco: "R$ 2.299",
-    status: "disponivel"
-  },
-  {
-    modelo: "iPhone 14",
-    gb: "128GB",
-    cor: "Preto",
-    bateria: "100%",
-    preco: "R$ 2.499",
-    status: "disponivel"
-  },
-  {
-    modelo: "iPhone 14",
-    gb: "128GB",
-    cor: "Preto",
-    bateria: "100%",
-    preco: "R$ 2.599",
-    status: "disponivel"
-  },
-  {
-    modelo: "iPhone 15 Pro",
-    gb: "128GB",
-    cor: "Black Titanium",
-    bateria: "81%",
-    preco: "R$ 3.699",
-    status: "disponivel"
-  }
-];
