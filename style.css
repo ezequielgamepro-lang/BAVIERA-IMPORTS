@@ -1,4 +1,3 @@
-/* RESET */
 * {
   box-sizing: border-box;
 }
@@ -17,14 +16,9 @@ body {
   padding: 25px;
 }
 
-.topo h1 {
-  margin: 0;
-}
-
 .topo p {
-  margin-top: 8px;
-  font-size: 14px;
   color: #ccc;
+  font-size: 14px;
 }
 
 /* INFOS */
@@ -42,10 +36,6 @@ body {
   font-size: 13px;
 }
 
-.info b {
-  display: block;
-}
-
 .info span {
   display: block;
   color: #555;
@@ -54,7 +44,6 @@ body {
 /* TITULO */
 h2 {
   padding: 0 15px;
-  margin-top: 10px;
 }
 
 /* CATÁLOGO */
@@ -81,13 +70,21 @@ h2 {
   transition: transform 0.1s ease, box-shadow 0.1s ease, border-color 0.1s ease;
 }
 
-/* efeito ao tocar */
-.card:active {
-  transform: translateY(4px);
-  box-shadow: 0 2px 0 #aaa;
+/* DESKTOP */
+@media (hover: hover) {
+  .card:active {
+    transform: translateY(3px);
+    box-shadow: 0 3px 0 #aaa;
+  }
 }
 
-/* selecionado */
+/* MOBILE (via JS) */
+.card.afundado {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #aaa;
+}
+
+/* SELECIONADO */
 .card.selecionado {
   border-color: #000;
   box-shadow: 0 6px 0 #000;
@@ -99,19 +96,17 @@ h2 {
   height: 26px;
   border-radius: 50%;
   border: 2px solid #bbb;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-weight: bold;
   color: transparent;
 }
 
 .card.selecionado .check {
   background: #000;
-  border-color: #000;
   color: #fff;
+  border-color: #000;
 }
 
 /* TEXTO */
@@ -126,18 +121,17 @@ h2 {
 
 .texto small {
   display: block;
-  color: #666;
   font-size: 13px;
+  color: #666;
 }
 
 /* PREÇO */
 .preco {
   font-weight: bold;
-  font-size: 16px;
   white-space: nowrap;
 }
 
-/* BOTÃO WHATSAPP */
+/* BOTÃO WHATS */
 #whats {
   position: fixed;
   bottom: 15px;
@@ -150,15 +144,12 @@ h2 {
   border-radius: 30px;
   padding: 16px;
   font-size: 16px;
-
   cursor: pointer;
 
-  /* levantado */
   box-shadow: 0 6px 0 #1da851;
   transition: transform 0.08s ease, box-shadow 0.08s ease;
 }
 
-/* afunda ao clicar */
 #whats:active {
   transform: translateY(4px);
   box-shadow: 0 2px 0 #1da851;
