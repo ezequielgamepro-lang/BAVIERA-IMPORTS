@@ -16,6 +16,10 @@ body {
   padding: 25px;
 }
 
+.topo h1 {
+  margin: 0;
+}
+
 .topo p {
   color: #ccc;
   font-size: 14px;
@@ -39,6 +43,12 @@ body {
 .info span {
   display: block;
   color: #555;
+}
+
+/* Ícones nas infos */
+.info i {
+  margin-right: 6px;
+  color: #0077cc; /* cor viva para destacar */
 }
 
 /* TITULO */
@@ -141,7 +151,7 @@ h2 {
   width: 160px;
   max-width: 90%;
 
-  background: linear-gradient(45deg, #25d366, #1ebe57); /* gradiente verde vibrante */
+  background: linear-gradient(45deg, #25d366, #1ebe57);
   color: #fff;
   border: none;
   border-radius: 30px;
