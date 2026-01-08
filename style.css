@@ -131,28 +131,31 @@ h2 {
   white-space: nowrap;
 }
 
-/* BOTÃO WHATS - CENTRALIZADO EM TODOS DISPOSITIVOS */
+/* BOTÃO WHATS - CENTRALIZADO E VIBRANTE */
 #whats {
   position: fixed;
   bottom: 20px;
-
   left: 50%;
   transform: translateX(-50%);
 
-  width: 160px;          /* largura fixa para consistência */
-  max-width: 90%;        /* não ultrapassa 90% no mobile */
-  
-  background: #25d366;
+  width: 160px;
+  max-width: 90%;
+
+  background: linear-gradient(45deg, #25d366, #1ebe57); /* gradiente verde vibrante */
   color: #fff;
   border: none;
   border-radius: 30px;
   padding: 14px 20px;
   font-size: 16px;
   cursor: pointer;
-
-  box-shadow: 0 6px 0 #1da851;
-  transition: transform 0.08s ease, box-shadow 0.08s ease;
+  box-shadow: 0 6px 10px rgba(37, 211, 102, 0.6);
+  transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.3s ease;
   text-align: center;
+}
+
+#whats:hover {
+  background: linear-gradient(45deg, #1ebe57, #25d366);
+  box-shadow: 0 8px 15px rgba(37, 211, 102, 0.8);
 }
 
 #whats:active {
