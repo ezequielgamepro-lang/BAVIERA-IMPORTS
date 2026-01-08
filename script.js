@@ -1,13 +1,12 @@
 const telefone = "5547999123456"; // número correto (Brasil)
-
 const cards = document.querySelectorAll(".card");
 const botao = document.getElementById("whats");
+const contador = document.getElementById("contador");
 
 let modeloSelecionado = "";
 let precoSelecionado = "";
-let numeroSelecionado = 0;
 
-cards.forEach((card, index) => {
+cards.forEach(card => {
   card.addEventListener("pointerdown", (e) => {
     e.preventDefault(); // evita clique fantasma no mobile
 
@@ -18,24 +17,20 @@ cards.forEach((card, index) => {
     setTimeout(() => card.classList.remove("afundado"), 120);
 
     // limpa seleção
-    cards.forEach(c => {
-      c.classList.remove("selecionado");
-      c.querySelector(".check").textContent = ""; // limpa número
-    });
+    cards.forEach(c => c.classList.remove("selecionado"));
 
     if (jaSelecionado) {
-      // desmarca
       modeloSelecionado = "";
       precoSelecionado = "";
-      numeroSelecionado = 0;
     } else {
-      // seleciona
       card.classList.add("selecionado");
       modeloSelecionado = card.dataset.modelo;
       precoSelecionado = card.dataset.preco;
-      numeroSelecionado = index + 1;
-      card.querySelector(".check").textContent = numeroSelecionado; // mostra número
     }
+
+    // Atualiza contador do lado do WhatsApp
+    const totalSelecionados = document.querySelectorAll(".card.selecionado").length;
+    contador.textContent = totalSelecionados > 0 ? totalSelecionados : "";
   });
 });
 
