@@ -1,45 +1,64 @@
-const telefone = "5547999123456"; // número correto (Brasil)
+const telefone = "5547996544445";
 
 const cards = document.querySelectorAll(".card");
 const botao = document.getElementById("whats");
+const contador = document.getElementById("contador");
 
-let modeloSelecionado = "";
-let precoSelecionado = "";
+let selecionados = [];
 
-cards.forEach(card => {
-  card.addEventListener("pointerup", (e) => {
-    e.preventDefault(); // evita clique fantasma no mobile
+// Atualiza contador
+function atualizarContador() {
+  const total = selecionados.length;
 
-    const jaSelecionado = card.classList.contains("selecionado");
-
-    // efeito de afundar
-    card.classList.add("afundado");
-    setTimeout(() => card.classList.remove("afundado"), 120);
-
-    // limpa seleção
-    cards.forEach(c => c.classList.remove("selecionado"));
-
-    if (jaSelecionado) {
-      // desmarca
-      modeloSelecionado = "";
-      precoSelecionado = "";
-    } else {
-      // seleciona
-      card.classList.add("selecionado");
-      modeloSelecionado = card.dataset.modelo;
-      precoSelecionado = card.dataset.preco;
-    }
-  });
-});
-
-// botão WhatsApp
-botao.addEventListener("click", () => {
-  if (!modeloSelecionado) {
-    alert("Selecione um modelo primeiro");
+  if (total === 0) {
+    contador.classList.remove("ativo");
+    contador.textContent = "0";
     return;
   }
 
-  const mensagem = `Olá! Tenho interesse no ${modeloSelecionado} pelo valor de ${precoSelecionado}.`;
+  contador.textContent = total;
+  contador.classList.add("ativo");
+
+  contador.classList.remove("pulse");
+  void contador.offsetWidth;
+  contador.classList.add("pulse");
+}
+
+// Cards
+cards.forEach(card => {
+  card.addEventListener("pointerup", (e) => {
+    e.preventDefault();
+
+    const modelo = card.dataset.modelo;
+    const preco = card.dataset.preco;
+
+    card.classList.add("afundado");
+    setTimeout(() => card.classList.remove("afundado"), 120);
+
+    if (card.classList.contains("selecionado")) {
+      card.classList.remove("selecionado");
+      selecionados = selecionados.filter(p => p.modelo !== modelo);
+    } else {
+      card.classList.add("selecionado");
+      selecionados.push({ modelo, preco });
+    }
+
+    atualizarContador();
+  });
+});
+
+// WhatsApp
+botao.addEventListener("click", () => {
+  if (selecionados.length === 0) {
+    alert("Selecione pelo menos um iPhone");
+    return;
+  }
+
+  const lista = selecionados
+    .map(p => `• ${p.modelo} - ${p.preco}`)
+    .join("\n");
+
+  const mensagem = `Olá! Tenho interesse nos seguintes iPhones:\n\n${lista}`;
   const link = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
 
   window.open(link, "_blank");
