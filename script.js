@@ -1,4 +1,4 @@
-const telefone = "5547999123456"; // número correto
+const telefone = "5547999123456"; // número correto (formato internacional)
 
 const cards = document.querySelectorAll(".card");
 const botao = document.getElementById("whats");
@@ -6,10 +6,10 @@ const botao = document.getElementById("whats");
 let modeloSelecionado = "";
 let precoSelecionado = "";
 
-// efeito + seleção
+// CARDS: toque, clique e seleção
 cards.forEach(card => {
 
-  // MOBILE: afundar
+  // MOBILE: efeito de afundar
   card.addEventListener("touchstart", () => {
     card.classList.add("afundado");
   }, { passive: true });
@@ -22,17 +22,27 @@ cards.forEach(card => {
     card.classList.remove("afundado");
   });
 
-  // seleção
+  // SELEÇÃO / DESSELEÇÃO
   card.addEventListener("click", () => {
-    cards.forEach(c => c.classList.remove("selecionado"));
-    card.classList.add("selecionado");
+    const jaSelecionado = card.classList.contains("selecionado");
 
-    modeloSelecionado = card.dataset.modelo;
-    precoSelecionado = card.dataset.preco;
+    // remove seleção de todos
+    cards.forEach(c => c.classList.remove("selecionado"));
+
+    if (jaSelecionado) {
+      // desmarca
+      modeloSelecionado = "";
+      precoSelecionado = "";
+    } else {
+      // seleciona novo
+      card.classList.add("selecionado");
+      modeloSelecionado = card.dataset.modelo;
+      precoSelecionado = card.dataset.preco;
+    }
   });
 });
 
-// WhatsApp
+// BOTÃO WHATSAPP
 botao.addEventListener("click", () => {
   if (!modeloSelecionado) {
     alert("Selecione um modelo primeiro");
