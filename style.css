@@ -4,24 +4,6 @@ body {
   background: #f2f2f2;
 }
 
-.topo {
-  background: #000;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
-
-.info {
-  background: #fff;
-  padding: 15px;
-  font-size: 14px;
-}
-
-h2 {
-  text-align: center;
-  margin: 20px 0;
-}
-
 .catalogo {
   padding: 15px;
   display: flex;
@@ -32,16 +14,20 @@ h2 {
 .card {
   background: #fff;
   border-radius: 14px;
-  border: 2px solid transparent;
+  border: 2px solid #ddd;
   cursor: pointer;
   transition: 0.2s;
+}
+
+.card.selecionado {
+  border: 2px solid #000;
 }
 
 .card input {
   display: none;
 }
 
-.card .conteudo {
+.conteudo {
   padding: 15px;
 }
 
@@ -52,27 +38,15 @@ h2 {
 }
 
 .radio {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border: 2px solid #999;
   border-radius: 50%;
 }
 
-.card input:checked + .conteudo {
-  border-radius: 12px;
-}
-
-.card input:checked ~ .conteudo .radio {
+.card.selecionado .radio {
   background: #000;
   border-color: #000;
-}
-
-.card:has(input:checked) {
-  border: 2px solid #000;
-}
-
-strong {
-  font-size: 18px;
 }
 
 #btnWhats {
@@ -83,10 +57,8 @@ strong {
   color: #fff;
   border: none;
   border-radius: 12px;
-  cursor: pointer;
 }
 
 #btnWhats:disabled {
   background: #aaa;
-  cursor: not-allowed;
 }
