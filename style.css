@@ -44,9 +44,10 @@ header p {
   border-radius: 18px;
   padding: 20px;
   cursor: pointer;
-  border: 2px solid transparent;
+  border: 2px solid #ddd;
   box-shadow: 0 8px 20px rgba(0,0,0,.08);
   transition: .25s;
+  position: relative;
 }
 
 .card:hover {
@@ -54,8 +55,26 @@ header p {
 }
 
 .card.selected {
-  border-color: #25d366;
-  box-shadow: 0 0 0 3px rgba(37,211,102,.25);
+  border-color: #000;
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+}
+
+/* bolinha de seleção */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #999;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.card.selected::before {
+  background: #000;
+  border-color: #000;
 }
 
 .card h3 {
@@ -101,4 +120,3 @@ footer {
 .whatsapp i {
   font-size: 22px;
 }
-
