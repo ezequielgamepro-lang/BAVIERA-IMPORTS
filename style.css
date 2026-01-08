@@ -15,6 +15,14 @@ body {
   color: #fff;
   text-align: center;
   padding: 25px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.topo.mostrar {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .topo h1 {
@@ -31,6 +39,14 @@ body {
   display: flex;
   gap: 10px;
   padding: 15px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.infos.mostrar {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .info {
@@ -50,6 +66,14 @@ body {
 /* TITULO */
 h2 {
   padding: 0 15px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+h2.mostrar {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* CATÁLOGO */
@@ -72,6 +96,13 @@ h2 {
   box-shadow: 0 6px 8px rgba(0,0,0,0.1);
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.card.mostrar {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Hover / toque mais vivo */
@@ -162,7 +193,6 @@ h2 {
   z-index: 9999;
 }
 
-/* Efeito “brilho leve” no botão */
 #whats:hover {
   filter: brightness(1.15);
   box-shadow: 0 8px 15px rgba(37, 211, 102, 0.8);
