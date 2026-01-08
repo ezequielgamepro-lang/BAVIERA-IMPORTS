@@ -131,17 +131,17 @@ h2 {
   white-space: nowrap;
 }
 
-/* BOTÃO WHATS - AJUSTADO PARA CENTRO INFERIOR */
+/* BOTÃO WHATS - CENTRALIZADO EM TODOS DISPOSITIVOS */
 #whats {
   position: fixed;
-  bottom: 20px;               /* distância do fundo */
-  left: 50%;                  /* centraliza horizontalmente */
-  transform: translateX(-50%);/* centraliza exatamente */
+  bottom: 20px;
 
-  width: auto;                /* largura automática */
-  min-width: 160px;           /* largura mínima */
-  max-width: 90%;              /* não ocupar toda a tela no mobile */
+  left: 50%;
+  transform: translateX(-50%);
 
+  width: 160px;          /* largura fixa para consistência */
+  max-width: 90%;        /* não ultrapassa 90% no mobile */
+  
   background: #25d366;
   color: #fff;
   border: none;
@@ -152,9 +152,17 @@ h2 {
 
   box-shadow: 0 6px 0 #1da851;
   transition: transform 0.08s ease, box-shadow 0.08s ease;
+  text-align: center;
 }
 
 #whats:active {
   transform: translateX(-50%) translateY(4px);
   box-shadow: 0 2px 0 #1da851;
+}
+
+/* Ajuste extra para iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  #whats {
+    left: 50vw;
+  }
 }
