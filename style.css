@@ -94,7 +94,7 @@ h2 {
   box-shadow: 0 6px 0 #000;
 }
 
-/* CHECK - bolinha de seleção com número */
+/* CHECK */
 .check {
   width: 26px;
   height: 26px;
@@ -157,6 +157,22 @@ h2 {
   box-shadow: 0 6px 10px rgba(37, 211, 102, 0.6);
   transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.3s ease;
   text-align: center;
+}
+
+/* Contador numérico */
+.contador {
+  display: inline-block;
+  margin-left: 8px;
+  background: red;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  vertical-align: middle;
 }
 
 #whats:hover {
