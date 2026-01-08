@@ -93,9 +93,9 @@ h2.mostrar {
   align-items: center;
   gap: 15px;
   border: 2px solid #ddd;
-  box-shadow: 0 6px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 8px rgba(0,0,0,0.08);
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
   opacity: 0;
   transform: translateY(20px);
 }
@@ -108,23 +108,23 @@ h2.mostrar {
 /* Hover / toque mais vivo */
 @media (hover: hover) {
   .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
     border-color: #999;
     background: #f9f9f9;
   }
 }
 
 .card.afundado {
-  transform: translateY(3px);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  transform: translateY(2px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
 }
 
 /* SELECIONADO */
 .card.selecionado {
   border-color: #000;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-  background: linear-gradient(135deg, #e0ffe0, #c0ffc0);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, #f0fff0, #e0ffe0);
 }
 
 /* CHECK */
@@ -156,31 +156,32 @@ h2.mostrar {
 .texto h3 {
   margin: 0;
   font-size: 16px;
+  color: #111;
 }
 
-/* BATERIA E OUTRAS INFOS */
+/* BATERIA E OUTRAS INFOS LEVES */
 .texto small {
   display: inline-block;
   font-size: 13px;
-  color: #fff;
-  background: #555; /* fundo escuro leve */
+  color: #111;
+  background: rgba(255, 255, 255, 0.6);
   padding: 2px 6px;
-  border-radius: 10px;
-  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
   margin-top: 2px;
 }
 
-/* PREÇO DO APARELHO */
+/* PREÇO LEVE E ELEGANTE */
 .preco {
   font-weight: bold;
   white-space: nowrap;
-  color: #fff;
-  background: #25d366; /* verde vibrante suave */
-  padding: 4px 8px;
-  border-radius: 12px;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  color: #111;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 3px 8px;
+  border-radius: 10px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   display: inline-block;
 }
 
@@ -209,13 +210,13 @@ h2.mostrar {
 
 /* Brilho leve no hover */
 #whats:hover {
-  filter: brightness(1.15);
-  box-shadow: 0 8px 15px rgba(37, 211, 102, 0.8);
+  filter: brightness(1.1);
+  box-shadow: 0 8px 15px rgba(37, 211, 102, 0.7);
   background: linear-gradient(45deg, #1ebe57, #25d366);
 }
 
 #whats:active {
-  transform: translateX(-50%) translateY(4px);
+  transform: translateX(-50%) translateY(3px);
   box-shadow: 0 2px 0 #1da851;
 }
 
