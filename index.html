@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Baviera Imports</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -11,22 +11,27 @@
 
 <body>
 
-<header>
+<header class="top">
   <h1>Baviera Imports</h1>
-  <p>
-    Balneário Camboriú • Entrega grátis<br>
-    90 dias de garantia • Até 12x no cartão
-  </p>
+  <p>iPhones Seminovos • Garantia de 90 dias<br>Entrega grátis em BC e região</p>
 </header>
 
-<main class="container">
-  <h2>Selecione um iPhone</h2>
-  <div class="grid" id="lista"></div>
-</main>
+<section class="info-cards">
+  <div class="info-card">
+    📍 <strong>Localização</strong><br>Balneário Camboriú, SC
+  </div>
+  <div class="info-card">
+    🛡️ <strong>Garantia</strong><br>90 dias de cobertura
+  </div>
+  <div class="info-card">
+    📄 <strong>Procedência</strong><br>Com nota e CNPJ
+  </div>
+</section>
 
-<footer>
-  CNPJ 60.393.207/0001-03 • WhatsApp (47) 99654-4445
-</footer>
+<main class="container">
+  <h2>Catálogo Disponível</h2>
+  <div id="lista"></div>
+</main>
 
 <a id="btnWhatsapp" class="whatsapp" target="_blank">
   <i class="fab fa-whatsapp"></i> Falar no WhatsApp
