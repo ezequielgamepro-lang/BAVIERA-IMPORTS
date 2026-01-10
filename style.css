@@ -16,17 +16,15 @@ body {
   padding: 28px 20px;
 }
 
-/* Nome da loja – destaque leve */
 .topo h1 {
   margin: 0;
   font-size: 28px;
   font-weight: 800;
   letter-spacing: 0.4px;
-  color: #ffffff;
+  color: #fff;
   text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-/* Texto abaixo do nome */
 .topo p {
   margin-top: 6px;
   font-size: 14px;
@@ -88,10 +86,15 @@ h2 {
   box-shadow: 0 6px 0 #ddd;
 
   cursor: pointer;
-  transition: transform 0.1s ease, box-shadow 0.1s ease, border-color 0.1s ease;
+  user-select: none;
+
+  transition:
+    transform 0.08s ease,
+    box-shadow 0.08s ease,
+    border-color 0.08s ease;
 }
 
-/* Desktop */
+/* 👉 PC */
 @media (hover: hover) {
   .card:active {
     transform: translateY(3px);
@@ -99,13 +102,13 @@ h2 {
   }
 }
 
-/* Mobile (via JS) */
+/* 👉 Android + iOS (JS aplica) */
 .card.afundado {
   transform: translateY(3px);
   box-shadow: 0 3px 0 #aaa;
 }
 
-/* ✅ Selecionado – EXATAMENTE como antes */
+/* 👉 Selecionado (permanece após clique) */
 .card.selecionado {
   border-color: #000;
   box-shadow: 0 6px 0 #000;
