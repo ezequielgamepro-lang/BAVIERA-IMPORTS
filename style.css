@@ -6,66 +6,77 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f2f2f2;
+  transition: background 0.3s;
 }
 
-/* ================= TOPO ================= */
+/* TOPO */
 .topo {
   background: linear-gradient(#111, #000);
   color: #fff;
   text-align: center;
-  padding: 28px 20px;
+  padding: 25px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.topo.mostrar {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .topo h1 {
   margin: 0;
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-  color: #fff;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .topo p {
-  margin-top: 6px;
-  font-size: 14px;
-  line-height: 1.4;
   color: #ccc;
+  font-size: 14px;
 }
 
-/* ================= INFOS ================= */
+/* INFOS */
 .infos {
   display: flex;
   gap: 10px;
   padding: 15px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.infos.mostrar {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .info {
   background: #fff;
   flex: 1;
-  padding: 14px;
-  border-radius: 14px;
+  padding: 12px;
+  border-radius: 12px;
   font-size: 13px;
-}
-
-.info b {
-  display: block;
-  font-size: 13px;
-  color: #111;
-  margin-bottom: 3px;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .info span {
-  font-size: 12px;
-  color: #666;
+  display: block;
+  color: #555;
 }
 
-/* ================= TITULO ================= */
+/* TITULO */
 h2 {
   padding: 0 15px;
-  color: #111;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* ================= CATÁLOGO ================= */
+h2.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CATÁLOGO */
 .catalogo {
   padding: 15px;
   display: flex;
@@ -73,7 +84,7 @@ h2 {
   gap: 15px;
 }
 
-/* ================= CARD ================= */
+/* CARD */
 .card {
   background: #fff;
   border-radius: 14px;
@@ -81,40 +92,42 @@ h2 {
   display: flex;
   align-items: center;
   gap: 15px;
-
   border: 2px solid #ddd;
-  box-shadow: 0 6px 0 #ddd;
-
+  box-shadow: 0 6px 8px rgba(0,0,0,0.08);
   cursor: pointer;
-  user-select: none;
-
-  transition:
-    transform 0.08s ease,
-    box-shadow 0.08s ease,
-    border-color 0.08s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
-/* 👉 PC */
+.card.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover / toque mais vivo */
 @media (hover: hover) {
-  .card:active {
-    transform: translateY(3px);
-    box-shadow: 0 3px 0 #aaa;
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+    border-color: #999;
+    background: #f9f9f9;
   }
 }
 
-/* 👉 Android + iOS (JS aplica) */
 .card.afundado {
-  transform: translateY(3px);
-  box-shadow: 0 3px 0 #aaa;
+  transform: translateY(2px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
 }
 
-/* 👉 Selecionado (permanece após clique) */
+/* SELECIONADO */
 .card.selecionado {
   border-color: #000;
-  box-shadow: 0 6px 0 #000;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, #f0fff0, #e0ffe0);
 }
 
-/* ================= CHECK ================= */
+/* CHECK */
 .check {
   width: 26px;
   height: 26px;
@@ -125,6 +138,8 @@ h2 {
   justify-content: center;
   font-weight: bold;
   color: transparent;
+  font-size: 14px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 
 .card.selecionado .check {
@@ -133,7 +148,7 @@ h2 {
   border-color: #000;
 }
 
-/* ================= TEXTO ================= */
+/* TEXTO */
 .texto {
   flex: 1;
 }
@@ -144,49 +159,72 @@ h2 {
   color: #111;
 }
 
+/* BATERIA E OUTRAS INFOS LEVES */
 .texto small {
   display: inline-block;
   font-size: 13px;
-  color: #222;
-  background: rgba(255,255,255,0.85);
+  color: #111;
+  background: rgba(255, 255, 255, 0.6);
   padding: 2px 6px;
   border-radius: 8px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
-  margin-top: 3px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  margin-top: 2px;
 }
 
-/* ================= PREÇO ================= */
+/* PREÇO LEVE E ELEGANTE */
 .preco {
   font-weight: bold;
   white-space: nowrap;
   color: #111;
-  background: rgba(255,255,255,0.85);
-  padding: 4px 10px;
-  border-radius: 12px;
-  text-shadow: 0 1px 1px rgba(0,0,0,0.08);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 3px 8px;
+  border-radius: 10px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: inline-block;
 }
 
-/* ================= BOTÃO WHATS ================= */
+/* BOTÃO WHATS - VIBRANTE */
 #whats {
   position: fixed;
-  bottom: 18px;
-  left: 50%;
+  bottom: env(safe-area-inset-bottom, 20px);
+  inset-inline-start: 50%;
   transform: translateX(-50%);
-
-  background: linear-gradient(135deg, #25d366, #1ebe5d);
+  
+  width: 160px;
+  max-width: 90%;
+  
+  background: linear-gradient(45deg, #25d366, #1ebe57);
   color: #fff;
   border: none;
   border-radius: 30px;
-  padding: 16px 28px;
+  padding: 14px 20px;
   font-size: 16px;
   cursor: pointer;
+  box-shadow: 0 6px 10px rgba(37, 211, 102, 0.6);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.3s ease, filter 0.3s ease;
+  text-align: center;
+  z-index: 9999;
+}
 
-  box-shadow: 0 6px 0 #1da851;
-  transition: transform 0.08s ease, box-shadow 0.08s ease;
+/* Brilho leve no hover */
+#whats:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 8px 15px rgba(37, 211, 102, 0.7);
+  background: linear-gradient(45deg, #1ebe57, #25d366);
 }
 
 #whats:active {
-  transform: translateX(-50%) translateY(4px);
+  transform: translateX(-50%) translateY(3px);
   box-shadow: 0 2px 0 #1da851;
+}
+
+/* contador discreto */
+.contador {
+  display: inline-block;
+  margin-left: 6px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
 }
