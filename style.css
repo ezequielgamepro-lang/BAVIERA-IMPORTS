@@ -13,7 +13,7 @@ body {
   background: linear-gradient(#111, #000);
   color: #fff;
   text-align: center;
-  padding: 25px;
+  padding: 26px 20px;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -24,27 +24,26 @@ body {
   transform: translateY(0);
 }
 
-/* 🔥 NOME MAIS VIVO (SEM MUDAR IDENTIDADE) */
+/* NOME */
 .topo h1 {
   margin: 0;
   font-size: 26px;
   font-weight: 700;
-  letter-spacing: 0.5px;
-  background: linear-gradient(
-    90deg,
-    #ffffff,
-    #e6e6e6,
-    #ffffff
-  );
+  letter-spacing: 0.6px;
+  background: linear-gradient(90deg, #ffffff, #eaeaea, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow:
-    0 2px 6px rgba(0,0,0,0.35);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.35);
 }
 
+/* TEXTO ABAIXO DO NOME – MAIS ELEGANTE */
 .topo p {
-  color: #ccc;
+  margin-top: 8px;
   font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+  color: rgba(255,255,255,0.75);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.35);
 }
 
 /* INFOS */
@@ -75,16 +74,6 @@ body {
   box-shadow:
     0 4px 8px rgba(0,0,0,0.08),
     inset 0 1px 0 rgba(255,255,255,0.6);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-@media (hover: hover) {
-  .info:hover {
-    transform: translateY(-2px);
-    box-shadow:
-      0 6px 14px rgba(0,0,0,0.12),
-      inset 0 1px 0 rgba(255,255,255,0.7);
-  }
 }
 
 .info b {
@@ -97,7 +86,6 @@ body {
 .info span {
   display: block;
   color: #444;
-  font-size: 13px;
 }
 
 /* TITULO */
@@ -173,7 +161,6 @@ h2.mostrar {
   justify-content: center;
   font-weight: bold;
   color: transparent;
-  font-size: 14px;
 }
 
 .card.selecionado .check {
@@ -182,7 +169,7 @@ h2.mostrar {
   border-color: #000;
 }
 
-/* TEXTO */
+/* TEXTO CARD */
 .texto {
   flex: 1;
 }
@@ -197,7 +184,7 @@ h2.mostrar {
   display: inline-block;
   font-size: 13px;
   color: #111;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255,255,255,0.6);
   padding: 2px 6px;
   border-radius: 8px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.05);
@@ -209,7 +196,7 @@ h2.mostrar {
   font-weight: bold;
   white-space: nowrap;
   color: #111;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255,255,255,0.85);
   padding: 4px 10px;
   border-radius: 12px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.12);
