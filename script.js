@@ -1,29 +1,50 @@
-const telefone = "5547999123456"; // número do WhatsApp
-const cards = Array.from(document.querySelectorAll(".card"));
-const botao = document.getElementById("whats");
-const contador = document.getElementById("contador");
+const telefone = "5547999123456";
 const catalogo = document.querySelector(".catalogo");
+const botaoWhats = document.getElementById("whats");
+const contador = document.getElementById("contador");
+const botaoOrdenar = document.getElementById("ordenar");
+
+let cards = Array.from(document.querySelectorAll(".card"));
+let selecionados = new Set();
+let ordemCrescente = true;
 
 // ================================
-// ORDENAÇÃO POR PREÇO (MENOR → MAIOR)
+// FUNÇÃO PARA PEGAR PREÇO NUMÉRICO
 // ================================
-cards
-  .sort((a, b) => {
-    const precoA = parseFloat(
-      a.dataset.preco.replace("R$", "").replace(".", "").replace(",", ".")
-    );
-    const precoB = parseFloat(
-      b.dataset.preco.replace("R$", "").replace(".", "").replace(",", ".")
-    );
-    return precoA - precoB;
-  })
-  .forEach(card => catalogo.appendChild(card));
+function getPreco(card) {
+  return parseFloat(
+    card.dataset.preco.replace("R$", "").replace(".", "").replace(",", ".")
+  );
+}
+
+// ================================
+// ORDENAÇÃO
+// ================================
+function ordenarCards() {
+  cards.sort((a, b) => {
+    return ordemCrescente
+      ? getPreco(a) - getPreco(b)
+      : getPreco(b) - getPreco(a);
+  });
+
+  cards.forEach(card => catalogo.appendChild(card));
+
+  botaoOrdenar.textContent = ordemCrescente
+    ? "Ordenar por preço ↓"
+    : "Ordenar por preço ↑";
+}
+
+botaoOrdenar.addEventListener("click", () => {
+  ordemCrescente = !ordemCrescente;
+  ordenarCards();
+});
+
+// ordena ao carregar (menor → maior)
+ordenarCards();
 
 // ================================
 // SELEÇÃO MÚLTIPLA
 // ================================
-let selecionados = new Set();
-
 function toggleCard(card) {
   card.classList.add("afundado");
   setTimeout(() => card.classList.remove("afundado"), 120);
@@ -47,9 +68,9 @@ cards.forEach(card => {
 });
 
 // ================================
-// BOTÃO WHATSAPP
+// WHATSAPP
 // ================================
-botao.addEventListener("click", () => {
+botaoWhats.addEventListener("click", () => {
   if (selecionados.size === 0) {
     alert("Selecione pelo menos um modelo");
     return;
@@ -60,8 +81,10 @@ botao.addEventListener("click", () => {
     mensagem += `- ${card.dataset.modelo} pelo valor de ${card.dataset.preco}\n`;
   });
 
-  const link = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
-  window.open(link, "_blank");
+  window.open(
+    `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`,
+    "_blank"
+  );
 });
 
 // ================================
