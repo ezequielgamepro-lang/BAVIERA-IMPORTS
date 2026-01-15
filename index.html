@@ -1,80 +1,93 @@
-const telefone = "5547999123456"; // número do WhatsApp
-const cards = Array.from(document.querySelectorAll(".card"));
-const botao = document.getElementById("whats");
-const contador = document.getElementById("contador");
-const catalogo = document.querySelector(".catalogo");
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baviera Imports</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-// ================================
-// ORDENAÇÃO POR PREÇO (MENOR → MAIOR)
-// ================================
-cards
-  .sort((a, b) => {
-    const precoA = parseFloat(
-      a.dataset.preco.replace("R$", "").replace(".", "").replace(",", ".")
-    );
-    const precoB = parseFloat(
-      b.dataset.preco.replace("R$", "").replace(".", "").replace(",", ".")
-    );
-    return precoA - precoB;
-  })
-  .forEach(card => catalogo.appendChild(card));
+<header class="topo">
+  <h1>Baviera Imports</h1>
+  <p>iPhones Seminovos • Garantia de 90 dias<br>Entrega grátis em BC e região</p>
+</header>
 
-// ================================
-// SELEÇÃO MÚLTIPLA
-// ================================
-let selecionados = new Set();
+<section class="infos">
+  <div class="info">
+    <b>📍 Localização</b>
+    <span>Balneário Camboriú - SC</span>
+  </div>
+  <div class="info">
+    <b>🛡️ Garantia</b>
+    <span>90 dias</span>
+  </div>
+  <div class="info">
+    <b>🧾 Procedência</b>
+    <span>Nota fiscal e CNPJ</span>
+  </div>
+</section>
 
-function toggleCard(card) {
-  card.classList.add("afundado");
-  setTimeout(() => card.classList.remove("afundado"), 120);
+<h2>Catálogo Disponível</h2>
 
-  if (card.classList.contains("selecionado")) {
-    card.classList.remove("selecionado");
-    selecionados.delete(card);
-  } else {
-    card.classList.add("selecionado");
-    selecionados.add(card);
-  }
+<div class="catalogo">
 
-  contador.textContent = selecionados.size > 0 ? selecionados.size : "";
-}
+  <div class="card" data-modelo="iPhone 14 Pro 128GB Grafite" data-preco="R$ 3.099,00">
+    <div class="check">✓</div>
+    <div class="texto">
+      <h3>iPhone 14 Pro</h3>
+      <small>128GB • Grafite</small>
+      <small>Bateria 77%</small>
+    </div>
+    <div class="preco">R$ 3.099,00</div>
+  </div>
 
-cards.forEach(card => {
-  card.addEventListener("pointerdown", e => {
-    e.preventDefault();
-    toggleCard(card);
-  });
-});
+  <div class="card" data-modelo="iPhone 14 Pro 256GB Roxo Profundo" data-preco="R$ 3.299,00">
+    <div class="check">✓</div>
+    <div class="texto">
+      <h3>iPhone 14 Pro</h3>
+      <small>256GB • Roxo Profundo</small>
+      <small>Bateria 84%</small>
+    </div>
+    <div class="preco">R$ 3.299,00</div>
+  </div>
 
-// ================================
-// BOTÃO WHATSAPP
-// ================================
-botao.addEventListener("click", () => {
-  if (selecionados.size === 0) {
-    alert("Selecione pelo menos um modelo");
-    return;
-  }
+  <div class="card" data-modelo="iPhone 15 128GB Azul" data-preco="R$ 3.299,00">
+    <div class="check">✓</div>
+    <div class="texto">
+      <h3>iPhone 15</h3>
+      <small>128GB • Azul</small>
+      <small>Bateria 86%</small>
+    </div>
+    <div class="preco">R$ 3.299,00</div>
+  </div>
 
-  let mensagem = "Olá! Tenho interesse nos seguintes modelos:\n";
-  selecionados.forEach(card => {
-    mensagem += `- ${card.dataset.modelo} pelo valor de ${card.dataset.preco}\n`;
-  });
+  <div class="card" data-modelo="iPhone 12 64GB Branco" data-preco="R$ 1.599,00">
+    <div class="check">✓</div>
+    <div class="texto">
+      <h3>iPhone 12</h3>
+      <small>64GB • Branco</small>
+      <small>Bateria 81%</small>
+    </div>
+    <div class="preco">R$ 1.599,00</div>
+  </div>
 
-  const link = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
-  window.open(link, "_blank");
-});
+  <div class="card" data-modelo="iPhone 14 128GB Preto" data-preco="R$ 2.599,00">
+    <div class="check">✓</div>
+    <div class="texto">
+      <h3>iPhone 14</h3>
+      <small>128GB • Preto</small>
+      <small>Bateria 100%</small>
+    </div>
+    <div class="preco">R$ 2.599,00</div>
+  </div>
 
-// ================================
-// ANIMAÇÕES DE ENTRADA
-// ================================
-window.addEventListener("load", () => {
-  document.querySelector(".topo").classList.add("mostrar");
-  document.querySelector(".infos").classList.add("mostrar");
-  document.querySelector("h2").classList.add("mostrar");
+</div>
 
-  cards.forEach((card, index) => {
-    setTimeout(() => {
-      card.classList.add("mostrar");
-    }, index * 120);
-  });
-});
+<button id="whats">
+  Falar no WhatsApp <span id="contador" class="contador"></span>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
